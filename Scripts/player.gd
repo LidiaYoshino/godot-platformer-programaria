@@ -120,17 +120,29 @@ func _fixed_process(delta):
 	on_air_time += delta
 	prev_jump_pressed = jump
 	
-	var chao = get_node("RayChao").is_colliding() || get_node("RayChao1").is_colliding()	
+	var chao = get_node("RayChao").is_colliding() || get_node("RayChao1").is_colliding()
+	var andando = walk_right || walk_left
 	
-	if walk_right:
-		get_node("sprite").set_flip_h(false)
-		if chao:
-			nova_anima = "walking"
-	if walk_left:
-		get_node("sprite").set_flip_h(true)
-		if chao:
-			nova_anima = "walking"
+	if andando:
+		if velocity.x > 0:
+			get_node("sprite").set_flip_h(false)
+		else:
+			get_node("sprite").set_flip_h(true)
 			
+	if chao:
+		if andando:
+			nova_anima = "walking"
+			consolelog("walking")
+		else:
+			nova_anima = "idle"
+			
+	else:
+		if velocity.y < 0:
+			nova_anima = "jumping"
+		else:
+			nova_anima = "falling"
+	
+	
 	if animacao != nova_anima:
 		get_node("Anima").play(nova_anima)
 		animacao = nova_anima
