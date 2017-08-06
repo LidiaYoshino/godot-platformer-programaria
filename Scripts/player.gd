@@ -132,21 +132,17 @@ func _fixed_process(delta):
 	if chao:
 		if andando:
 			nova_anima = "walking"
-			consolelog("walking")
 		else:
 			nova_anima = "idle"
-			
 	else:
 		if velocity.y < 0:
 			nova_anima = "jumping"
 		else:
 			nova_anima = "falling"
 	
-	
 	if animacao != nova_anima:
 		get_node("Anima").play(nova_anima)
 		animacao = nova_anima
-
 
 func _ready():
 	set_fixed_process(true)
