@@ -2,10 +2,10 @@
 
 [ext_resource path="res://sprites/spriteSheet.png" type="Texture" id=1]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 10.648, -10.6853, 10.6853, 10.648, -10.648, 10.6853, -10.6853, -10.648 )
+extents = Vector2( 10.6667, 10.6667 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
@@ -29,9 +29,9 @@ points = Vector2Array( 10.648, -10.6853, 10.6573, -5.50593, -10.676, -5.46992, -
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 208, 48, 16, 16 )
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
+0/occluder_offset = Vector2( 8, 8 )
+0/navigation_offset = Vector2( 8, 8 )
+0/shape_offset = Vector2( 8, 8 )
 0/shapes = [ SubResource( 1 ) ]
 1/name = "Tile1"
 1/texture = ExtResource( 1 )
