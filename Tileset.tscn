@@ -16,7 +16,7 @@ points = Vector2Array( 8, -8, 8, -2, -8, -2, -8, -8 )
 
 [node name="Tile" type="Sprite" parent="."]
 
-transform/pos = Vector2( -32, -16 )
+transform/pos = Vector2( -40, -24 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 208, 48, 16, 16 )
@@ -44,7 +44,7 @@ _update_shape_index = 0
 
 [node name="Tile1" type="Sprite" parent="."]
 
-transform/pos = Vector2( -16, -16 )
+transform/pos = Vector2( -24, -24 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 224, 48, 16, 16 )
@@ -72,7 +72,7 @@ _update_shape_index = 0
 
 [node name="Tile2" type="Sprite" parent="."]
 
-transform/pos = Vector2( 0, -16 )
+transform/pos = Vector2( -8, -24 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 240, 48, 16, 16 )
@@ -100,7 +100,7 @@ _update_shape_index = 0
 
 [node name="Tile3" type="Sprite" parent="."]
 
-transform/pos = Vector2( 16, -16 )
+transform/pos = Vector2( 8, -24 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 256, 48, 16, 16 )
@@ -128,13 +128,10 @@ trigger = false
 
 [node name="Tile4" type="Sprite" parent="."]
 
-transform/pos = Vector2( -8, -40 )
+transform/pos = Vector2( -16, -48 )
 texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 256, 64, 16, 16 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 
