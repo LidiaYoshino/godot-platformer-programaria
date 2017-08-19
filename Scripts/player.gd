@@ -120,7 +120,7 @@ func _fixed_process(delta):
 	on_air_time += delta
 	prev_jump_pressed = jump
 	
-	var chao = get_node("RayChao").is_colliding() || get_node("RayChao1").is_colliding()
+	var chao = get_node("RayChao").is_colliding() || get_node("RayChao1").is_colliding() || get_node("RayChao2").is_colliding()
 	var andando = walk_right || walk_left
 	
 	if andando:
