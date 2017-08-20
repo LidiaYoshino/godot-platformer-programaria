@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Anima/jumping.tres" type="Animation" id=5]
 [ext_resource path="res://Anima/walking.tres" type="Animation" id=6]
 [ext_resource path="res://Tileset.tres" type="TileSet" id=7]
+[ext_resource path="res://sprites/spriteSheet.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -93,7 +94,7 @@ type_mask = 15
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 1.5, 1.5 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -104,7 +105,7 @@ smoothing/enable = true
 smoothing/speed = 7.0
 drag_margin/left = 0.0
 drag_margin/top = 0.2
-drag_margin/right = 0.95
+drag_margin/right = 1.0
 drag_margin/bottom = 0.2
 
 [node name="chao" type="StaticBody2D" parent="."]
@@ -145,5 +146,41 @@ collision/layers = 2
 collision/mask = 1
 occluder/light_mask = 1
 tile_data = IntArray( 393217, 4, 393219, 4, 393241, 4, 393243, 4, 393250, 4, 393254, 4, 458752, 0, 458753, 1, 458754, 1, 458755, 1, 458756, 2, 458760, 4, 458762, 4, 458763, 4, 458764, 4, 458769, 4, 458770, 4, 458774, 4, 458775, 4, 458777, 0, 458778, 1, 458779, 2, 458784, 0, 458785, 1, 458786, 1, 458787, 1, 458788, 1, 458789, 1, 458790, 1, 458791, 1, 458792, 1, 458793, 1, 458794, 1, 458795, 1, 458796, 1, 458797, 1, 458798, 1, 458799, 1, 458800, 1, 458801, 1, 458802, 1, 458803, 1, 458804, 1, 458805, 1, 458806, 1, 458807, 1, 458808, 1, 458809, 1, 458810, 1, 458811, 1, 458812, 1, 458813, 1, 458814, 1, 458815, 1, 458816, 1, 458817, 1, 458818, 1, 458819, 1, 458820, 1, 458821, 1, 458822, 1, 458823, 1, 458824, 1, 458825, 1, 458826, 1, 458827, 1, 458828, 2, 524296, 0, 524297, 1, 524298, 1, 524299, 1, 524300, 2, 524304, 0, 524305, 1, 524306, 1, 524307, 1, 524308, 1, 524309, 1, 524310, 1, 524311, 1, 524312, 2 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+motion/scale = Vector2( 0.5, 0 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 398, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+
+transform/scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 8 )
+centered = false
+region = true
+region_rect = Rect2( 0, 160, 160, 144 )
+
+[node name="Sprite1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+
+transform/pos = Vector2( 199, 0 )
+transform/scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 8 )
+centered = false
+region = true
+region_rect = Rect2( 0, 160, 160, 144 )
 
 
